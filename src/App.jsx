@@ -20,12 +20,17 @@ const App = () => {
         </div>
         <span>Select Tip %</span>
         <section className='buttons-section'>
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>25%</button>
-          <button>50%</button>
-          <button>Custom</button>
+          <div className="left-btn">
+            <button>5%</button>
+            <button>15%</button>
+            <button>50%</button>
+          </div>
+          
+          <div className="right-btn">
+            <button>10%</button>
+            <button>25%</button>
+            <button title='Custom'>Custom</button>
+          </div>
         </section>
         <span>Number of people</span>
         <div className="number-of-people-container">
