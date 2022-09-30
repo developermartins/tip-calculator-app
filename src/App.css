@@ -12,6 +12,7 @@
     --grayish-cyan: hsl(184, 14%, 56%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
     --very-dark-cyan: hsl(183, 100%, 15%);
+    --strong-cyan: hsl(172, 67%, 45%);
 }
 
 .main-section {
@@ -78,6 +79,10 @@
     left: 3rem;
 }
 
+.number-of-people-container {
+    margin-bottom: 1rem;
+}
+
 .number-of-people-container svg {
     position: absolute;
     top: 33.5rem;
@@ -126,4 +131,31 @@
 .right-btn button[title="Custom"] {
     background-color: var(--very-light-grayish-cyan);
     color: var(--dark-grayish-cyan);
+}
+
+.result-section {
+    height: 15em;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--very-dark-cyan);
+}
+
+.amount-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.amount-container h1 {
+    color: var(--white);
+}
+
+.amount-container h1 p {
+    color: var(--dark-grayish-cyan);
+    font-size: 0.8rem;
+}
+
+.amount-container span {
+    color: var(--strong-cyan);
+    font-size: 1.8rem;
 }

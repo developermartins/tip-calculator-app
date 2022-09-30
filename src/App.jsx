@@ -46,9 +46,9 @@ const App = () => {
 
         <section className="result-section">
           <div className='amount-container'>
-            <p>Tip Amount <br />
-              <span>/ person</span>
-            </p>
+            <h1>Tip Amount <br />
+              <p>/ person</p>
+            </h1>
             <span>$4.27</span>
           </div>
           <div className='total-container'>
