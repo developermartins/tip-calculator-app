@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+}
+
+.main-section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--light-grayish-cyan);
+}
