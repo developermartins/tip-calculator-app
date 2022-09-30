@@ -159,3 +159,23 @@
     color: var(--strong-cyan);
     font-size: 1.8rem;
 }
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total-container h1 {
+    color: var(--white);
+}
+
+.total-container h1 p {
+    color: var(--dark-grayish-cyan);
+    font-size: 0.8rem;
+}
+
+.total-container span {
+    color: var(--strong-cyan);
+    font-size: 1.8rem;
+}

@@ -52,10 +52,10 @@ const App = () => {
             <span>$4.27</span>
           </div>
           <div className='total-container'>
-            <p>Total <br />
-              <span>/ person</span>
-              <span>$32.79</span>
-            </p>
+            <h1>Total <br />
+              <p>/ person</p>
+            </h1>
+            <span>$32.79</span>
           </div>
           <button>RESET</button>
         </section>
