@@ -35,9 +35,42 @@
 }
 
 .calculator-section {
+    display: flex;
+    flex-direction: column;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     min-height: 100vh;
     padding: 2rem 2rem;
     background-color: var(--white);
+}
+
+.bill-input-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.calculator-section input {
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 1.5rem;
+    text-align: right;
+    padding-right: 1.5rem;
+}
+
+.bill-input-container svg {
+    position: absolute;
+    left: 3rem;
+}
+
+.number-of-people-container svg {
+    position: absolute;
+    top: 21.2rem;
+    left: 3rem;
 }
