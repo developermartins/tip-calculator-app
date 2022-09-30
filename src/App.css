@@ -189,3 +189,92 @@
     color: var(--very-dark-cyan);
     background-color: var(--strong-cyan);
 }
+
+@media screen and (min-width: 768px) {
+    .main-section {
+        padding: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .calculator-section {
+        min-height: 50vh;
+        width: 70%;
+        flex-direction: row;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding: 3rem 3rem;
+    }
+
+    .bill-input-container svg {
+        left: 30rem;
+    }
+
+    .number-of-people-container svg {
+        top: 47.6rem;
+        left: 30rem;
+    }
+
+    .content-calc-section {
+        flex: 1;
+        margin-right: 2rem;
+    }
+
+    .bill-input-container {
+        margin-bottom: 4rem;
+    }
+
+    .buttons-section {
+        flex-direction: column;
+    }
+
+    .left-btn {
+        flex-direction: row;
+    }
+
+    .right-btn {
+        flex-direction: row;
+    }
+
+    .right-btn button {
+        width: 55%;
+        height: 60%;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .left-btn button {
+        width: 55%;
+        height: 60%;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .result-section {
+        flex: 1;
+        height: 30em;
+        width: 20rem;
+        padding: 4rem;
+    }
+
+    .amount-container {
+        display: flex;
+        margin-bottom: 4rem;
+    }
+
+    .amount-container span {
+        font-size: 3rem;
+        margin-top: -1rem;
+    }
+
+    .total-container {
+        margin-bottom: 8rem;
+    }
+
+    .total-container span {
+        font-size: 3rem;
+        margin-top: -1rem;
+    }
+}
