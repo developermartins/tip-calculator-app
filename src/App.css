@@ -18,3 +18,18 @@
     width: 100%;
     background-color: var(--light-grayish-cyan);
 }
+
+.header-section {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-section {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    min-height: 100vh;
+    padding: 2rem 2rem;
+    background-color: var(--white);
+}
