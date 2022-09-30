@@ -43,7 +43,6 @@ const App = () => {
           </svg>
         </div>
 
-
         <section className="result-section">
           <div className='amount-container'>
             <h1>Tip Amount <br />
