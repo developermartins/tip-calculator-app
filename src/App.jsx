@@ -6,20 +6,20 @@ import { calculator } from './utils/tipCalculator';
 
 const App = () => {
 
-  const [initialBillValue, setInitialBillValue] = useState(0);
-  const [initialPeopleValue, setInitialPeopleValue] = useState(0);
-  const [initialTipAmount, setInitialTipAmount] = useState(0);
-  const [initialTotal, setInitialTotal] = useState(0);
+  const [billValue, setBillValue] = useState(0);
+  const [peopleValue, setPeopleValue] = useState(0);
+  const [tipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const [activeInput, setActiveInput] = useState(false);
   const [numberOfPeopleActiveInput, setNumberOfPeopleActiveInput] = useState(false);
 
   const handleReset = (e) => {
     e.preventDefault();
-    setInitialBillValue(0);
-    setInitialPeopleValue(0);
-    setInitialTipAmount(0);
-    setInitialTotal(0);
+    setBillValue(0);
+    setPeopleValue(0);
+    setTipAmount(0);
+    setTotal(0);
     setPercentage(0);
     setActiveInput(false);
     setNumberOfPeopleActiveInput(false);
@@ -27,13 +27,13 @@ const App = () => {
 
   useEffect(() => {
     
-    if (initialPeopleValue !== 0 && initialPeopleValue !== '') {
-      const calc = calculator(initialBillValue, percentage, initialPeopleValue);
-      setInitialTipAmount(calc.tipAmount);
-      setInitialTotal(calc.total);
+    if (peopleValue !== 0 && peopleValue !== '') {
+      const calc = calculator(billValue, percentage, peopleValue);
+      setTipAmount(calc.tipAmount);
+      setTotal(calc.total);
     }
 
-  }, [percentage, initialPeopleValue]);
+  }, [percentage, peopleValue]);
 
   return (
     <section className="main-section">
@@ -47,8 +47,8 @@ const App = () => {
             <input
               type="number"
               className={ activeInput ? 'activeInput' : '' }
-              value={ initialBillValue }
-              onChange={ (e) => setInitialBillValue(e.target.value) }
+              value={ billValue }
+              onChange={ (e) => setBillValue(e.target.value) }
               onFocus={ (e) => setActiveInput(true) }
               onBlur={ (e) => setActiveInput(false) }
             />
@@ -119,8 +119,8 @@ const App = () => {
             <input
               type="number"
               className={ numberOfPeopleActiveInput ? 'activeInput' : '' }
-              value={ initialPeopleValue }
-              onChange={ (e) => setInitialPeopleValue(e.target.value) }
+              value={ peopleValue }
+              onChange={ (e) => setPeopleValue(e.target.value) }
               onFocus={ (e) => setNumberOfPeopleActiveInput(true) }
               onBlur={ (e) => setNumberOfPeopleActiveInput(false) }
             />
@@ -138,13 +138,13 @@ const App = () => {
             <h1>Tip Amount <br />
               <p>/ person</p>
             </h1>
-            <span>${ parseFloat(initialTipAmount).toFixed(2) }</span>
+            <span>${ parseFloat(tipAmount).toFixed(2) }</span>
           </div>
           <div className='total-container'>
             <h1>Total <br />
               <p>/ person</p>
             </h1>
-            <span>${ parseFloat(initialTotal).toFixed(2) }</span>
+            <span>${ parseFloat(total).toFixed(2) }</span>
           </div>
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: 'hsl(185, 41, 84)' }}
