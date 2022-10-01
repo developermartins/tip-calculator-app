@@ -12,7 +12,6 @@ const App = () => {
   const [percentage, setPercentage] = useState(0);
   const [activeInput, setActiveInput] = useState(false);
   const [numberOfPeopleActiveInput, setNumberOfPeopleActiveInput] = useState(false);
-  
 
   const handleReset = (e) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ const App = () => {
     setInitialTotal(0);
     setPercentage(0);
     setActiveInput(false);
-    setNumberOfPeopleActiveInput(false)
+    setNumberOfPeopleActiveInput(false);
   }
 
   return (
