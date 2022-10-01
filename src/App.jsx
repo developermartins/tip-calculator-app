@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import { motion } from 'framer-motion';
 
 const App = () => {
+
+  const [initialBillValue, setInitialBillValue] = useState(0);
+  const [initialPeopleValue, setInitialPeopleValue] = useState(0);
+  const [initialTipAmount, setInitialTipAmount] = useState(0);
+  const [initialTotal, setInitialTotal] = useState(0);
+  const [percentage, setPercentage] = useState(0);
+  const [activeInput, setActiveInput] = useState(false);
+  const [numberOfPeopleActiveInput, setNumberOfPeopleActiveInput] = useState(false);
+  
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    setInitialBillValue(0);
+    setInitialPeopleValue(0);
+    setInitialTipAmount(0);
+    setInitialTotal(0);
+    setPercentage(0);
+    setActiveInput(false);
+    setNumberOfPeopleActiveInput(false)
+  }
+
   return (
     <section className="main-section">
       <section className='header-section'>
@@ -13,7 +34,14 @@ const App = () => {
         <section className='content-calc-section'>
           <span>Bill</span>
           <div className="bill-input-container">
-            <input type="number" value={0} />
+            <input
+              type="number"
+              className={ activeInput ? 'activeInput' : '' }
+              value={ initialBillValue }
+              onChange={ (e) => setInitialBillValue(e.target.value) }
+              onFocus={ (e) => setActiveInput(true) }
+              onBlur={ (e) => setActiveInput(false) }
+            />
             <svg 
               xmlns="http://www.w3.org/2000/svg"
               width="11"
@@ -27,18 +55,24 @@ const App = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                className={ percentage === 0.05 ? 'active' : '' }
+                onClick={ (e) => setPercentage(0.05) }
               >
                 5%
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                className={ percentage === 0.15 ? 'active' : '' }
+                onClick={ (e) => setPercentage(0.15) }
               >
                 15%
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                className={ percentage === 0.50 ? 'active' : '' }
+                onClick={ (e) => setPercentage(0.50) }
               >
                 50%
               </motion.button>
@@ -48,12 +82,16 @@ const App = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                className={ percentage === 0.1 ? 'active' : '' }
+                onClick={ (e) => setPercentage(0.10) }
               >
                 10%
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                className={ percentage === 0.25 ? 'active' : '' }
+                onClick={ (e) => setPercentage(0.25) }
               >
                 25%
               </motion.button>
@@ -68,7 +106,14 @@ const App = () => {
           </section>
           <span>Number of people</span>
           <div className="number-of-people-container">
-            <input type="number" value={0} />
+            <input
+              type="number"
+              className={ numberOfPeopleActiveInput ? 'activeInput' : '' }
+              value={ initialPeopleValue }
+              onChange={ (e) => setInitialPeopleValue(e.target.value) }
+              onFocus={ (e) => setNumberOfPeopleActiveInput(true) }
+              onBlur={ (e) => setNumberOfPeopleActiveInput(false) }
+            />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13"
@@ -83,17 +128,18 @@ const App = () => {
             <h1>Tip Amount <br />
               <p>/ person</p>
             </h1>
-            <span>$4.27</span>
+            <span>${ parseFloat(initialTipAmount).toFixed(2) }</span>
           </div>
           <div className='total-container'>
             <h1>Total <br />
               <p>/ person</p>
             </h1>
-            <span>$32.79</span>
+            <span>${ parseFloat(initialTotal).toFixed(2) }</span>
           </div>
           <motion.button
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, backgroundColor: 'hsl(185, 41, 84)' }}
             whileTap={{ scale: 0.9 }}
+            onClick={ handleReset }
           >
             RESET
           </motion.button>

@@ -68,6 +68,11 @@
     font-size: 1.5rem;
     text-align: right;
     padding-right: 1.5rem;
+    cursor: pointer;
+}
+
+.calculator-section .activeInput {
+    border: 2px solid var(--strong-cyan);
 }
 
 .calculator-section span {
@@ -113,6 +118,11 @@
     cursor: pointer;
 }
 
+.left-btn .active {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
 .right-btn {
     display: flex;
     flex-direction: column;
@@ -133,6 +143,11 @@
 .right-btn button[title="Custom"] {
     background-color: var(--very-light-grayish-cyan);
     color: var(--dark-grayish-cyan);
+}
+
+.right-btn .active {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
 }
 
 .result-section {
@@ -191,6 +206,12 @@
     color: var(--very-dark-cyan);
     background-color: var(--strong-cyan);
     cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (min-width: 1440px) {
