@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import { motion } from 'framer-motion';
+
 const App = () => {
   return (
     <section className="main-section">
@@ -22,15 +24,46 @@ const App = () => {
           <span>Select Tip %</span>
           <section className='buttons-section'>
             <div className="left-btn">
-              <button>5%</button>
-              <button>15%</button>
-              <button>50%</button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                5%
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                15%
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                50%
+              </motion.button>
             </div>
             
             <div className="right-btn">
-              <button>10%</button>
-              <button>25%</button>
-              <button title='Custom'>Custom</button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                10%
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                25%
+              </motion.button>
+              <motion.button
+                title='Custom'
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Custom
+              </motion.button>
             </div>
           </section>
           <span>Number of people</span>
@@ -58,7 +91,12 @@ const App = () => {
             </h1>
             <span>$32.79</span>
           </div>
-          <button>RESET</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            RESET
+          </motion.button>
         </section>
       </section>
     </section>
