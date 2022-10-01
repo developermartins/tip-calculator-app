@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { motion } from 'framer-motion';
+import { calculator } from './utils/tipCalculator';
 
 const App = () => {
 
@@ -23,6 +24,16 @@ const App = () => {
     setActiveInput(false);
     setNumberOfPeopleActiveInput(false);
   }
+
+  useEffect(() => {
+    
+    if (initialPeopleValue !== 0 && initialPeopleValue !== '') {
+      const calc = calculator(initialBillValue, percentage, initialPeopleValue);
+      setInitialTipAmount(calc.tipAmount);
+      setInitialTotal(calc.total);
+    }
+
+  }, [percentage, initialPeopleValue]);
 
   return (
     <section className="main-section">
