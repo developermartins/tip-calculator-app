@@ -286,6 +286,12 @@ input::-webkit-inner-spin-button {
         font-size: 1.5rem;
     }
 
+    .customTipInput {
+        width: 55%;
+        height: 60%;
+        margin-right: 1.9rem;
+    }
+
     .result-section {
         flex: 1;
         height: 30em;
