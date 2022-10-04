@@ -14,6 +14,8 @@ const App = () => {
   const [activeInput, setActiveInput] = useState(false);
   const [numberOfPeopleActiveInput, setNumberOfPeopleActiveInput] = useState(false);
 
+  const [isCustom, setCustom] = useState(false);
+
   const handleReset = (e) => {
     e.preventDefault();
     setBillValue(0);
@@ -22,8 +24,26 @@ const App = () => {
     setTotal(0);
     setPercentage(0);
     setActiveInput(false);
+    setCustom(false);
     setNumberOfPeopleActiveInput(false);
-  }
+  };
+
+  const resetCustom = () => {
+    setPercentage(0);
+    setCustom(false);
+  };
+
+  const handleCustomPercentage = () => {
+    if (percentage !== 0) setPercentage(0);
+
+    setCustom(true);
+  };
+
+  const handlePercentage = (percentage) => {
+    isCustom && resetCustom();
+
+    setPercentage(percentage);
+  };
 
   useEffect(() => {
     
@@ -46,7 +66,7 @@ const App = () => {
           <div className="bill-input-container">
             <input
               type="number"
-              className={ activeInput ? 'activeInput' : '' }
+              className={ activeInput ? 'calculator-section-input activeInput' : 'calculator-section-input' }
               value={ billValue }
               onChange={ (e) => setBillValue(e.target.value) }
               onFocus={ (e) => setActiveInput(true) }
@@ -66,7 +86,7 @@ const App = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={ percentage === 0.05 ? 'active' : '' }
-                onClick={ (e) => setPercentage(0.05) }
+                onClick={ (e) => handlePercentage(0.05) }
               >
                 5%
               </motion.button>
@@ -74,7 +94,7 @@ const App = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={ percentage === 0.15 ? 'active' : '' }
-                onClick={ (e) => setPercentage(0.15) }
+                onClick={ (e) => handlePercentage(0.15) }
               >
                 15%
               </motion.button>
@@ -82,7 +102,7 @@ const App = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={ percentage === 0.50 ? 'active' : '' }
-                onClick={ (e) => setPercentage(0.50) }
+                onClick={ (e) => handlePercentage(0.50) }
               >
                 50%
               </motion.button>
@@ -93,7 +113,7 @@ const App = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={ percentage === 0.1 ? 'active' : '' }
-                onClick={ (e) => setPercentage(0.10) }
+                onClick={ (e) => handlePercentage(0.10) }
               >
                 10%
               </motion.button>
@@ -101,24 +121,35 @@ const App = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={ percentage === 0.25 ? 'active' : '' }
-                onClick={ (e) => setPercentage(0.25) }
+                onClick={ (e) => handlePercentage(0.25) }
               >
                 25%
               </motion.button>
-              <motion.button
-                title='Custom'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Custom
-              </motion.button>
+              { isCustom ?
+                <input
+                  type="number"
+                  className={ isCustom ? 'customTipInput activeInput' : 'customTipInput' }
+                  value={ percentage }
+                  onChange={ (e) => setPercentage(e.target.value) }
+                  onBlur={ (e) => resetCustom() }
+                />
+              :
+                <motion.button
+                  title='Custom'
+                  onClick={() => handleCustomPercentage()}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Custom
+               </motion.button>
+              }
             </div>
           </section>
           <span>Number of people</span>
           <div className="number-of-people-container">
             <input
               type="number"
-              className={ numberOfPeopleActiveInput ? 'activeInput' : '' }
+              className={ numberOfPeopleActiveInput ? 'calculator-section-input activeInput' : 'calculator-section-input' }
               value={ peopleValue }
               onChange={ (e) => setPeopleValue(e.target.value) }
               onFocus={ (e) => setNumberOfPeopleActiveInput(true) }
