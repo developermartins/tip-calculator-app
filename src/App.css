@@ -77,6 +77,10 @@
     border: 2px solid var(--strong-cyan);
 }
 
+.calculator-section-input .error {
+    border: 2px solid red;
+}
+
 .calculator-section span {
     color: var(--dark-grayish-cyan);
 }

@@ -15,6 +15,7 @@ const App = () => {
   const [numberOfPeopleActiveInput, setNumberOfPeopleActiveInput] = useState(false);
 
   const [isCustom, setCustom] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleReset = (e) => {
     e.preventDefault();
