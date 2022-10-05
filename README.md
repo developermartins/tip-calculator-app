@@ -5,7 +5,7 @@
 
 Tip Calculator developed using React.
 
-### Access the app: https://mind-body.netlify.app/
+### Access the app: https://your-tip-calculator.netlify.app/
 <br />
 
 ## Desktop
@@ -43,14 +43,6 @@ git clone git@github.com:martsDev/tip-calculator-app.git
 
 <pre>
 cd tip-calculator-app
-</pre>
-
-<br />
-
-### Access src directory 📂
-
-<pre>
-cd src
 </pre>
 
 <br />
